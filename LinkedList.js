@@ -90,6 +90,59 @@ class LinkedList {
 
     return undefined;
   }
+
+  // remove head node from the list and return its value
+  pop() {
+    if (this.headNode == null) return undefined;
+
+    let oldHead = this.headNode;
+
+    this.headNode = this.headNode.nextNode;
+
+    return oldHead.value;
+  }
+
+  // check if value is in the list
+  contains(value) {
+    let current = this.headNode;
+
+    while (current != null) {
+      if (current.value == value) return true;
+      current = current.nextNode;
+    }
+
+    return false;
+  }
+
+  // get index of a given value
+  findIndex(value) {
+    let current = this.headNode;
+    let index = 0;
+
+    while (current != null) {
+      if (current.value == value) return index;
+      current = current.nextNode;
+      index++;
+    }
+
+    return -1;
+  }
+
+  // print list
+  toString() {
+    let result = "";
+
+    if (this.headNode == null) return "";
+    let current = this.headNode;
+
+    while (current != null) {
+      result += `( ${current.value} ) -> `;
+      current = current.nextNode;
+    }
+
+    result += "null";
+    return result;
+  }
 }
 
 export { LinkedList };
