@@ -1,0 +1,21 @@
+{
+  "name": "linkedlist-top",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadecodelab/LinkedList-TOP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/jadecodelab/LinkedList-TOP/issues"
+  },
+  "homepage": "https://github.com/jadecodelab/LinkedList-TOP#readme"
+}
