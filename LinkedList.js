@@ -144,7 +144,7 @@ class LinkedList {
     return result;
   }
 
-  // insert new nodes with given values at given index
+  // get node at given index
   getNodeAt(index) {
     let current = this.headNode;
     let i = 0;
@@ -156,6 +156,7 @@ class LinkedList {
     }
   }
 
+  // insert new nodes with given values at given index
   insertAt(index, ...values) {
     const size = this.size();
 
@@ -171,7 +172,7 @@ class LinkedList {
       if (insertAtIndex === 0) {
         this.prepend(newNode.value);
         continue;
-      } else if (insertAtIndex === size) {
+      } else if (insertAtIndex === this.size()) {
         this.append(newNode.value);
         continue;
       } else {
@@ -182,6 +183,22 @@ class LinkedList {
 
       insertAtIndex++;
     }
+  }
+
+  // remove node at given index
+  removeAt(index) {
+    if (index < 0 || index >= this.size()) {
+      throw new RangeError("Index out of bounds");
+    }
+
+    if (index === 0) {
+      this.headNode = this.headNode.nextNode;
+      return;
+    }
+
+    let prevNode = this.getNodeAt(index - 1);
+
+    prevNode.nextNode = prevNode.nextNode.nextNode;
   }
 }
 
