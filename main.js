@@ -10,6 +10,11 @@ list.append(3);
 
 console.log(list.toString());
 
+list.insertAt(3, 4, 5);
+console.log(list.toString());
+
+list.insertAt(-3, 4, 5);
+console.log(list.toString());
 // console.log(list.pop());
 // console.log(list.headNode);
 

@@ -143,6 +143,46 @@ class LinkedList {
     result += "null";
     return result;
   }
+
+  // insert new nodes with given values at given index
+  getNodeAt(index) {
+    let current = this.headNode;
+    let i = 0;
+
+    while (current != null) {
+      if (i == index) return current;
+      current = current.nextNode;
+      i++;
+    }
+  }
+
+  insertAt(index, ...values) {
+    const size = this.size();
+
+    if (index < 0 || index > size) {
+      throw new RangeError("Index out of bounds");
+    }
+
+    let insertAtIndex = index;
+
+    for (const value of values) {
+      const newNode = new Node(value);
+
+      if (insertAtIndex === 0) {
+        this.prepend(newNode.value);
+        continue;
+      } else if (insertAtIndex === size) {
+        this.append(newNode.value);
+        continue;
+      } else {
+        const nodeBefore = this.getNodeAt(insertAtIndex - 1);
+        newNode.nextNode = nodeBefore.nextNode;
+        nodeBefore.nextNode = newNode;
+      }
+
+      insertAtIndex++;
+    }
+  }
 }
 
 export { LinkedList };
