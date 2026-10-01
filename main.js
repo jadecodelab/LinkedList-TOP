@@ -10,4 +10,8 @@ list.prepend(99);
 list.prepend(45);
 
 console.log(list.headNode);
-console.log(list.size());
+// console.log(list.size());
+
+console.log(list.at(0));
+console.log(list.at(2));
+console.log(list.at(5));

@@ -51,6 +51,45 @@ class LinkedList {
 
     return count;
   }
+
+  // get head's value
+  head() {
+    if (this.headNode == null) {
+      return undefined;
+    }
+
+    return this.headNode.value;
+  }
+
+  // get tail's value
+  tail() {
+    if (this.headNode == null) {
+      return undefined;
+    }
+
+    let current = this.headNode;
+
+    while (current.nextNode != null) {
+      current = current.nextNode;
+    }
+    return current.value;
+  }
+
+  // get node's value at a given index
+  at(index) {
+    let current = this.headNode;
+    let count = 0;
+
+    while (current != null) {
+      if (count == index) {
+        return current.value;
+      }
+      current = current.nextNode;
+      count++;
+    }
+
+    return undefined;
+  }
 }
 
 export { LinkedList };
